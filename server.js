@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var _ = require('lodash');
-var PORT = process.env.PORT || 3000;
+var PORT = 3000 || process.env.PORT;
 
 function reqTimestamp(req, res, next) {
   console.log(`Method: ${req.method} @${new Date().getTime()}`);

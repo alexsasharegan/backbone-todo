@@ -3,13 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <title>Backbone Todo</title>
+  <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" charset="utf-8">
   <link rel="stylesheet" href="/css/main.css" charset="utf-8">
 </head>
 <body>
 
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1 class="page-header text-center">
+          <span class="main">todos</span>
+          <small>powered by Backbone.js</small>
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <div class="well">
+          <form action="">
+            <input id="todo-input" class="form-control" type="text"
+            name="description" placeholder="Enter your task here">
+          </form>
+          <ul id="todo-container" class="list-group">
+            <!-- BACKBONE VIEW -->
+            <li class="list-group-item"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;Walk the dog</li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;Walk the dog</li>
+          </ul>
+          <div>
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-default" type="button" name="All">All</button>
+              <button class="btn btn-default" type="button" name="Active">Active</button>
+              <button class="btn btn-default" type="button" name="Completed">Completed</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- BODY CONTAINER -->
+
+  <!-- Templates -->
+  <script type="text/template" id="new-todo-template">
+    <li><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;<%= todo.description %></li>
+  </script>
+  <!-- JS Dependencies -->
   <script src="/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="/libs/underscore/underscore-min.js" charset="utf-8"></script>
   <script src="/libs/backbone/backbone-min.js" charset="utf-8"></script>
+  <!-- APP -->
   <script src="/js/app.js" charset="utf-8"></script>
 </body>
 </html>

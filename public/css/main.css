@@ -1,2 +1,27 @@
+body {
+  background-color: #f5f5f5;
+  padding: 0;
+}
 
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJtYWluLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiIl0sImZpbGUiOiJtYWluLmNzcyJ9 */
+.main {
+  color: rgba(175, 47, 47, 0.66);
+  font-size: 5rem;
+}
+
+.well {
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.list-group-item:first-child, .list-group-item:last-child {
+  margin-top: -1px;
+  border-radius: 0;
+  border: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIkYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjVmNTtcbiRoZWFkaW5nOiByZ2JhKDE3NSwgNDcsIDQ3LCAuNjYpO1xuXG5ib2R5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogJGJhY2tncm91bmQtY29sb3I7XG4gIHBhZGRpbmc6IDA7XG59XG5cbi5tYWluIHtcbiAgY29sb3I6ICRoZWFkaW5nO1xuICBmb250LXNpemU6IDVyZW07XG59XG5cbi53ZWxsIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgYm9yZGVyLXJhZGl1czogMDtcbiAgYm94LXNoYWRvdzogMnB4IDJweCA1cHggMCByZ2JhKDAsIDAsIDAsIC4yNSk7XG59XG5cbi5mb3JtLWNvbnRyb2wge1xuICBib3JkZXItcmFkaXVzOiAwO1xufVxuXG4ubGlzdC1ncm91cC1pdGVtOmZpcnN0LWNoaWxkLCAubGlzdC1ncm91cC1pdGVtOmxhc3QtY2hpbGQge1xuICBtYXJnaW4tdG9wOiAtMXB4O1xuICBib3JkZXItcmFkaXVzOiAwO1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xufVxuIl0sIm1hcHBpbmdzIjoiQUFHQSxBQUFBLElBQUksQ0FBQztFQUNILGdCQUFnQixFQUpDLE9BQU87RUFLeEIsT0FBTyxFQUFFLENBQUU7Q0FDWjs7QUFFRCxBQUFBLEtBQUssQ0FBQztFQUNKLEtBQUssRUFSRyx1QkFBSTtFQVNaLFNBQVMsRUFBRSxJQUFLO0NBQ2pCOztBQUVELEFBQUEsS0FBSyxDQUFDO0VBQ0osZ0JBQWdCLEVBQUUsT0FBUTtFQUMxQixhQUFhLEVBQUUsQ0FBRTtFQUNqQixVQUFVLEVBQUUsR0FBRyxDQUFDLEdBQUcsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLG1CQUFJO0NBQy9COztBQUVELEFBQUEsYUFBYSxDQUFDO0VBQ1osYUFBYSxFQUFFLENBQUU7Q0FDbEI7O0FBRUQsQUFBZ0IsZ0JBQUEsQUFBQSxZQUFZLEVBQUUsQUFBZ0IsZ0JBQUEsQUFBQSxXQUFXLENBQUM7RUFDeEQsVUFBVSxFQUFFLElBQUs7RUFDakIsYUFBYSxFQUFFLENBQUU7RUFDakIsTUFBTSxFQUFFLGNBQWU7Q0FDeEIiLCJuYW1lcyI6W119 */

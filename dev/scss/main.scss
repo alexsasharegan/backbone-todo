@@ -1,0 +1,28 @@
+$background-color: #f5f5f5;
+$heading: rgba(175, 47, 47, .66);
+
+body {
+  background-color: $background-color;
+  padding: 0;
+}
+
+.main {
+  color: $heading;
+  font-size: 5rem;
+}
+
+.well {
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .25);
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.list-group-item:first-child, .list-group-item:last-child {
+  margin-top: -1px;
+  border-radius: 0;
+  border: 1px solid #ccc;
+}
