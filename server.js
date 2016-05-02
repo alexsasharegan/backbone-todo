@@ -24,13 +24,13 @@ app.get('/todos', function (req, res) {
 
 // @GET by :id
 app.get('/todos/:id', function (req, res) {
-  let todo = _.find(tmpDB, {id:Number(req.params.id)});
+  var todo = _.find(tmpDB, {id:Number(req.params.id)});
   res.json(todo);
 });
 
 // @POST
 app.post('/todos', function (req, res) {
-  let body = _.pick(req.body, ['description', 'completed']);
+  var body = _.pick(req.body, ['description', 'completed']);
 
   if (!_.isBoolean(body.completed) || !_.isString(body.description) || body.description.trim().length === 0) {
 		return res.status(400).send();
@@ -44,10 +44,10 @@ app.post('/todos', function (req, res) {
 
 // @PUT by :id
 app.put('/todos/:id', function (req, res) {
-  let body = _.pick(req.body, ['description', 'completed']);
-  let validAttrs = {};
-  let todoId = Number(req.params.id);
-  let matchedTodo = _.find(tmpDB, {id: todoId});
+  var body = _.pick(req.body, ['description', 'completed']);
+  var validAttrs = {};
+  var todoId = Number(req.params.id);
+  var matchedTodo = _.find(tmpDB, {id: todoId});
 
   if (!matchedTodo) {
     return res.status(404).send();
