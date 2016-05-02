@@ -22,14 +22,12 @@
     <div class="row">
       <div class="col-lg-6 col-lg-offset-3">
         <div class="well">
-          <form action="">
+          <form action="" id="todo-form">
             <input id="todo-input" class="form-control" type="text"
             name="description" placeholder="Enter your task here">
           </form>
           <ul id="todo-container" class="list-group">
             <!-- BACKBONE VIEW -->
-            <li class="list-group-item"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;Walk the dog</li>
-            <li class="list-group-item"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;Walk the dog</li>
           </ul>
           <div>
             <div class="btn-group btn-group-sm">
@@ -46,7 +44,7 @@
 
   <!-- Templates -->
   <script type="text/template" id="new-todo-template">
-    <li><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;<%= todo.description %></li>
+    <li class="list-group-item"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;<%= description %></li>
   </script>
   <!-- JS Dependencies -->
   <script src="/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
