@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-prebuild": "echo This ran before Heroku installs dependencies.",
+    "start": "node server",
+    "heroku-postbuild": "echo This runs afterwards.",
+    "postinstall": "bower install",
     "dev": "nodemon server & gulp"
   },
   "engines" : {
