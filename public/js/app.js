@@ -1,42 +1,64 @@
 'use strict';
 
-var Todo = Backbone.Model.extend({
+var app = {};
+app.view = {};
+app.model = {};
+app.collection = {};
+
+app.model.Todo = Backbone.Model.extend({
   defaults: {
     description: 'Enter your task here',
     completed: false
   },
   initialize: function initialize() {
-    this.view = new TodoView({ model: this });
+    this.view = new app.view.TodoView({ model: this });
+  },
+  toggle: function toggle() {
+    this.save({ completed: !this.get('completed') });
   }
 });
 
-var Todos = Backbone.Collection.extend({
+app.collection.TodoCollection = Backbone.Collection.extend({
   url: '/todos',
-  model: Todo
+  model: app.model.Todo,
+  completed: function completed() {
+    return this.where({ completed: true });
+  },
+  active: function active() {
+    return this.where({ completed: false });
+  }
 });
 
-var TodoView = Backbone.View.extend({
+app.view.TodoView = Backbone.View.extend({
   el: '#todo-container',
   tagName: 'li',
   template: _.template($('#new-todo-template').html()),
+  events: {
+    "click li.list-group-item": "toggleCompleted"
+  },
+  toggleCompleted: function toggleCompleted(e) {
+    this.model.toggle();
+  },
   initialize: function initialize(options) {
     this.model = options.model;
     this.model.fetch();
-    this.render();
-    this.model.on('change', this.render);
+    this.listenTo(this.model, 'change', this.render);
+    this.listenTo(this.model, 'destroy', this.remove);
   },
   render: function render() {
-    console.log(this.model);
     var output = this.template({ description: this.model.get('description') });
+    this.$el.toggleClass('disabled', this.model.get('completed'));
     this.$el.prepend(output);
     return this;
   }
 });
 
-var todos = new Todos();
+var todoList = new app.collection.TodoCollection();
 var $todoForm = $('#todo-form');
 $todoForm.on('submit', function (e) {
+  console.log('before submit');
   e.preventDefault();
-  todos.create({ description: $todoForm.children('input').val() });
+  console.log('after submit');
+  todoList.create({ description: $todoForm.children('input').val() });
   $todoForm.children('input').val('');
 });
