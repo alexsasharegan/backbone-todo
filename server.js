@@ -15,7 +15,7 @@ var id = 0;
 app.use(reqTimestamp);
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
-app.use('/libs', express.static('bower_components'));
+app.use('/libs', express.static(__dirname + '/bower_components'));
 
 // @GET all todos
 app.get('/todos', function (req, res) {
