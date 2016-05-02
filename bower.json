@@ -1,7 +1,7 @@
 {
   "name": "todo-backbone",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "authors": [
     "alex regan"
   ],

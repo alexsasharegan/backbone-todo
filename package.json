@@ -2,13 +2,13 @@
   "name": "todo-backbone",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-prebuild": "echo This ran before Heroku installs dependencies.",
     "start": "node server",
     "heroku-postbuild": "echo This runs afterwards.",
-    "postinstall": "bower install",
+    "postinstall": "bower cache clean && bower install",
     "dev": "nodemon server & gulp"
   },
   "engines" : {
