@@ -5,15 +5,16 @@ var _ = require('lodash');
 var PORT = 3000 || process.env.PORT;
 
 function reqTimestamp(req, res, next) {
-  console.log(`Method: ${req.method} @${new Date().getTime()}`);
+  console.log(`Method: ${req.method} @${new Date()}`);
+  console.log(`Req.body: ${req.body}`);
   next();
 }
 
 var tmpDB = [];
 var id = 0;
 
-app.use(reqTimestamp);
 app.use(bodyParser.json());
+app.use(reqTimestamp);
 app.use(express.static(__dirname + '/public'));
 app.use('/libs', express.static(__dirname + '/bower_components'));
 
@@ -82,5 +83,6 @@ app.delete('/todos/:id', function (req, res) {
 	}
 });
 
-app.listen(PORT);
-console.log(`> Server started on Port: ${PORT} @${new Date().getTime()}`);
+app.listen(PORT, function () {
+  console.log(`> Server started on Port: ${PORT} @${new Date()}`);
+});
