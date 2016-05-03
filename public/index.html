@@ -22,18 +22,25 @@
     <div class="row">
       <div class="col-lg-6 col-lg-offset-3">
         <div class="well">
-          <form action="" id="todo-form">
-            <input id="todo-input" class="form-control" type="text"
+          <div class="todo-app">
+            <input id="todo-input" class="new-todo form-control" type="text"
             name="description" placeholder="Enter your task here">
-          </form>
-          <ul id="todo-container" class="list-group">
-            <!-- BACKBONE VIEW -->
-          </ul>
-          <div>
+            <ul id="todo-container" class="list-group">
+              <!-- BACKBONE VIEW -->
+            </ul>
             <div class="btn-group btn-group-sm">
-              <button class="btn btn-default" type="button" name="All">All</button>
-              <button class="btn btn-default" type="button" name="Active">Active</button>
-              <button class="btn btn-default" type="button" name="Completed">Completed</button>
+              <button class="btn btn-default toggle-all" type="button" name="All">
+                <a href="#/">All</a>
+              </button>
+              <button class="btn btn-default" type="button" name="Active">
+                <a href="#/active">Active</a>
+              </button>
+              <button class="btn btn-default" type="button" name="Completed">
+                <a href="#/completed">Completed</a>
+              </button>
+              <button class="btn btn-default clear-completed" type="button" name="Clear Completed">
+                Clear Completed
+              </button>
             </div>
           </div>
         </div>
@@ -44,8 +51,13 @@
 
   <!-- Templates -->
   <script type="text/template" id="new-todo-template">
-    <li class="list-group-item"><span class="glyphicon glyphicon-unchecked"></span>&nbsp;&nbsp;<%= description %></li>
-  </script>
+			<div class="view">
+				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+				<label><%- description %></label>
+				<button class="destroy btn btn-default"><span class="glyphicon glyphicon-trash"></span></button>
+			</div>
+			<input class="edit" value="<%- description %>">
+		</script>
   <!-- JS Dependencies -->
   <script src="/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="/libs/underscore/underscore-min.js" charset="utf-8"></script>
