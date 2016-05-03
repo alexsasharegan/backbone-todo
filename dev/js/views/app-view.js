@@ -17,19 +17,19 @@ var app = app || {};
       // this.$main = this.$('.main');
       this.$list = this.$('#todo-container');
 
-      this.listenTo(app.todos, 'add', this.addOne);
-			this.listenTo(app.todos, 'reset', this.addAll);
-			this.listenTo(app.todos, 'change:completed', this.filterOne);
-			this.listenTo(app.todos, 'filter', this.filterAll);
-			this.listenTo(app.todos, 'all', _.debounce(this.render, 0));
+      this.listenTo(app.TodoCollection, 'add', this.addOne);
+			this.listenTo(app.TodoCollection, 'reset', this.addAll);
+			this.listenTo(app.TodoCollection, 'change:completed', this.filterOne);
+			this.listenTo(app.TodoCollection, 'filter', this.filterAll);
+			this.listenTo(app.TodoCollection, 'all', _.debounce(this.render, 0));
 
       app.TodoCollection.fetch({reset: true});
     },
     render: function () {
-      // var completed = app.todos.completed().length;
-			// var remaining = app.todos.remaining().length;
+      // var completed = app.TodoCollection.completed().length;
+			// var remaining = app.TodoCollection.remaining().length;
       //
-			// if (app.todos.length) {
+			// if (app.TodoCollection.length) {
 			// 	this.$main.show();
 			// 	this.$footer.show();
       //
@@ -74,7 +74,7 @@ var app = app || {};
       });
     },
     addOne: function (todo) {
-      var view = new app.TodoView({todo});
+      var view = new app.TodoView({model: todo});
       this.$list.append(view.render().el);
     },
     addAll: function () {

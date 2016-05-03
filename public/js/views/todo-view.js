@@ -16,7 +16,7 @@ var app = app || {};
       'keydown .edit': 'revertOnEscape',
       'blur .edit': 'close'
     },
-    initialize: function initialize(options) {
+    initialize: function initialize() {
       this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'destroy', this.remove);
       this.listenTo(this.model, 'visible', this.toggleVisible);
